@@ -1,12 +1,25 @@
 #!/bin/bash
+
+# if not root, then root
 SUDO=''
 if (( $EUID != 0 )); then
     SUDO='sudo'
 fi
-$SUDO curl -s https://raw.githubusercontent.com/kesumin/Custom-MOTD-for-Ubuntu-22.04.3-LTS/main/motd-setup.sh -o /tmp240207
-# $SUDO cat /tmp240207
-$SUDO chmod +x /tmp240207
-$SUDO bash /tmp240207
-echo 'completed motd installer'
-$SUDO rm /tmp240207
+
+# move current motd to old
+if [ ! -d "/etc/update-motd.d.old" ]; then
+    echo 'moving old motd files'
+    $SUDO mv /etc/update-motd.d /etc/update-motd.d.old
+    $SUDO mkdir /etc/update-motd.d
+fi
+
+# update-motd.d method
+if ! test -e "/etc/update-motd.d/99-server-info"; then
+    $SUDO touch /etc/update-motd.d/99-server-info
+    $SUDO curl -s https://raw.githubusercontent.com/kesumin/Custom-MOTD-for-Ubuntu-22.04.3-LTS/main/99-server-info -o /etc/update-motd.d/99-server-info
+    $SUDO chmod +x /etc/update-motd.d/99-server-info
+    echo 'installed mainfile'
+fi
+
+echo 'completed motd installation'
 $SUDO rm motd-start

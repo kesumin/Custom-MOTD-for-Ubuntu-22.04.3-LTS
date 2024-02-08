@@ -9,8 +9,6 @@ Current status: in dev
 
 do `curl -s https://raw.githubusercontent.com/kesumin/Custom-MOTD-for-Ubuntu-22.04.3-LTS/main/motd-start -o motd-start && sudo bash motd-start`
 
-*ONLY RUN ONCE!
-
 ## Usage
 
 You may change your network device in /motd.sh on line 26.

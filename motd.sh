@@ -14,7 +14,7 @@ cat > /etc/motd << EOF
         Memory: `free -m | head -n 2 | tail -n 1 | awk {'print  $2'}`M
         Swap: `free -m | tail -n 1 | awk {'print $2'}`M Disk: `df -h / | awk  '{ a = $2 } END { print a }'`
 
-        Last Updated: `date +"%Y-%m-%d %T"`
+        Last Updated: `date $T`
 
         Kernel: `uname -r`
         Distro: $PRETTY_NAME
