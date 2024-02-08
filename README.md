@@ -3,7 +3,7 @@
 A custom motd for Ubuntu 22.04.3 LTS.
 Forked from [arvati/alpine_motd_generator.md](https://gist.github.com/arvati/7d698d4472c8b2a6a9995b05f168c15a) on GitHub Gist.
 
-Current status: in dev
+Current status: it is alive
 
 ## Installation
 
