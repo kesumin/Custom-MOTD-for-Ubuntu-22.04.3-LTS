@@ -7,7 +7,7 @@ Current status: in dev
 
 ## Installation
 
-do `curl -s https://bit.ly/3OAgpdN -o motd && sudo bash motd`
+do `curl -s -L -o motd https://bit.ly/3OAgpdN && sudo bash motd`
 
 ## Usage
 

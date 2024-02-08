@@ -22,4 +22,4 @@ if ! test -e "/etc/update-motd.d/99-server-info"; then
 fi
 
 echo 'completed motd installation'
-$SUDO rm motd-installer
+$SUDO rm motd
