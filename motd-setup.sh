@@ -10,9 +10,8 @@ fi
 
 # create crontab for root
 echo 'creating cronjob'
-if ! exist /var/spool/cron/crontabs/root (
+if [ ! exist "/var/spool/cron/crontabs/root" ]; then
     touch /var/spool/cron/crontabs/root
-) 
 fi
 # write out current crontab
 crontab -l > crontmp
