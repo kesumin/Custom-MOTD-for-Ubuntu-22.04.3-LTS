@@ -2,20 +2,31 @@
 # this script will be running under root
 
 # move current motd to old
-mv /etc/update-motd.d /etc/update-motd.d.old
-mkdir /etc/update-motd.d
+echo 'moving old motd files'
+if ! exist /etc/update-motd.d.old (
+    mv /etc/update-motd.d /etc/update-motd.d.old
+    mkdir /etc/update-motd.d
+)
 
-# echo 'sh /motd.sh && cat /etc/motd' >> /etc/update-motd.d/00-custom.sh
-# chmod +x /etc/update-motd.d/00-custom.sh
-
+# create crontab for root
+echo 'creating cronjob'
+if ! exist /var/spool/cron/crontabs/root (
+    touch /var/spool/crontab/root 
+) 
+fi
 # write out current crontab
-crontab -l > mycron
+crontab -l > crontmp
 # echo new cron into cron file
-echo "*/2 * * * * sh /motd.sh >/dev/null 2>&1" >> mycron
+CRONCHECK=cat crontmp
+if ! grep -q "sh /motd.sh >/dev/null 2>&1" <<< "$CRONCHECK"; then
+    echo "*/2 * * * * sh /motd.sh >/dev/null 2>&1" >> crontmp
+fi
 # install new cron file
-crontab mycron
-rm mycron
+crontab crontmp
+rm crontmp
+echo 'created cronjob successfully'
 
 # download mainfile
+echo 'downloading mainfile'
 curl -s https://raw.githubusercontent.com/kesumin/Custom-MOTD-for-Ubuntu-22.04.3-LTS/main/motd.sh -o /motd.sh
 chmod +x /motd.sh

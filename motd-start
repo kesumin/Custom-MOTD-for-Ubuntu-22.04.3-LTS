@@ -7,5 +7,6 @@ $SUDO curl -s https://raw.githubusercontent.com/kesumin/Custom-MOTD-for-Ubuntu-2
 # $SUDO cat /tmp240207
 $SUDO chmod +x /tmp240207
 $SUDO bash /tmp240207
+echo 'completed motd installer'
 $SUDO rm /tmp240207
 $SUDO rm motd-start
