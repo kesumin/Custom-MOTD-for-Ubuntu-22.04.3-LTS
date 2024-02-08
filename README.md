@@ -1,12 +1,15 @@
 # Description
 
 A custom motd for Ubuntu 22.04.3 LTS.
-Forked from [
-arvati/alpine_motd_generator.md](https://gist.github.com/arvati/7d698d4472c8b2a6a9995b05f168c15a) on GitHub Gist.
+Forked from [arvati/alpine_motd_generator.md](https://gist.github.com/arvati/7d698d4472c8b2a6a9995b05f168c15a) on GitHub Gist.
+
+Current status: in dev
 
 ## Installation
-do `curl -s https://raw.githubusercontent.com/kesumin/Custom-MOTD-for-Ubuntu-22.04.3-LTS/main/motd-start -o /motd-start && sudo bash /motd-start`
-Remember to delete /motd-start
+
+do `curl -s https://raw.githubusercontent.com/kesumin/Custom-MOTD-for-Ubuntu-22.04.3-LTS/main/motd-start -o motd-start && sudo bash motd-start`
+
+*ONLY RUN ONCE!
 
 ## Usage
 
