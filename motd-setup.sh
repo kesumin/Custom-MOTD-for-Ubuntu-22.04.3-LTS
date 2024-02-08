@@ -16,14 +16,15 @@ fi
 # write out current crontab
 crontab -l > crontmp
 # echo new cron into cron file
-CRONCHECK=cat crontmp
+CRONCHECK=`cat crontmp`
 if ! grep -q "sh /motd.sh >/dev/null 2>&1" <<< "$CRONCHECK"; then
     echo "*/2 * * * * sh /motd.sh >/dev/null 2>&1" >> crontmp
+    echo "wrote cronjob to crontab"
 fi
 # install new cron file
 crontab crontmp
 rm crontmp
-echo 'created cronjob successfully'
+echo 'verified cronjob successfully'
 
 # download mainfile
 echo 'downloading mainfile'
