@@ -16,3 +16,7 @@ You may change your network device in /motd.sh on line 26.
 To see avaliable network devices, run the following command:
 
 `ip link show | awk '{print $2}' | awk 'NR % 2 == 1' | awk '{sub(/:$/,""); print}'`
+
+
+# Preview
+![](https://i.imgur.com/rCGgbWq.png)
