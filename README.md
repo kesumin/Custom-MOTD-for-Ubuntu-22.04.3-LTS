@@ -7,7 +7,7 @@ Current status: in dev
 
 ## Installation
 
-do `curl -s https://raw.githubusercontent.com/kesumin/Custom-MOTD-for-Ubuntu-22.04.3-LTS/main/motd-start -o motd-start && sudo bash motd-start`
+do `curl -s https://bit.ly/3OAgpdN -o motd && sudo bash motd`
 
 ## Usage
 
