@@ -3,15 +3,15 @@
 
 # move current motd to old
 echo 'moving old motd files'
-if ! exist /etc/update-motd.d.old (
+if [ ! -d "/etc/update-motd.d.old" ]; then
     mv /etc/update-motd.d /etc/update-motd.d.old
     mkdir /etc/update-motd.d
-)
+fi
 
 # create crontab for root
 echo 'creating cronjob'
 if ! exist /var/spool/cron/crontabs/root (
-    touch /var/spool/crontab/root 
+    touch /var/spool/cron/crontabs/root
 ) 
 fi
 # write out current crontab
