@@ -23,7 +23,7 @@ cat > /etc/motd << EOF
         Free Swap: `free -m | tail -n 1 | awk {'print $4'}`M
         Free Disk: `df -h / | awk '{ a =  $2 } END { print a }'`
 
-        eth0 Address: `ifconfig enp0s4 | grep -i inet | head -1 | awk '{print $2}'`
+        enp0s4 Address: `ifconfig enp0s4 | grep -i inet | head -1 | awk '{print $2}'`
 %                                                                            %
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++%
 EOF
